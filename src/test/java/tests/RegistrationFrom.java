@@ -1,7 +1,10 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import helpers.Attach;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -14,14 +17,8 @@ import static io.qameta.allure.Allure.step;
 
 
 public class RegistrationFrom {
-
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-    }
-
     @Test
+    @DisplayName("Заполнение формы demoqa")
     void successfulTest() {
         step("Заходим на сайт demoqa", () -> {
             open("/automation-practice-form");
@@ -59,5 +56,13 @@ public class RegistrationFrom {
                     text("png.png"), text("Lenina 5"), text("NCR Delhi"));
         });
 
+    }
+
+    @AfterEach
+    void addAttachments() {
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        Attach.addVideo();
     }
 }
