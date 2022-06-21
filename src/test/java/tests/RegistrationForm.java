@@ -3,7 +3,6 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import helpers.Attach;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -16,11 +15,13 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 
-public class RegistrationFrom {
+public class RegistrationForm {
     @Test
     @DisplayName("Заполнение формы demoqa")
     void successfulTest() {
         step("Заходим на сайт demoqa", () -> {
+            Configuration.baseUrl = "https://demoqa.com";
+            Configuration.browserSize = "1920x1080";
             open("/automation-practice-form");
         });
 
