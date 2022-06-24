@@ -17,13 +17,13 @@ import static io.qameta.allure.Allure.step;
 
 public class RegistrationForm extends TestBase {
     @Test
-    @DisplayName("Заполнение формы demoqa")
+    @DisplayName("Registration for demoqa.com")
     void successfulTest() {
-        step("Заходим на сайт demoqa", () -> {
+        step("Open site demoqa.com", () -> {
             open("/automation-practice-form");
         });
 
-        step("Вводим данные в форму", () -> {
+        step("Entering data into the form", () -> {
             $("[id=firstName]").setValue("Alex");
             $("[id=lastName]").setValue("Larin");
             $("[id=userEmail]").setValue("alexLar@gmail.com");
@@ -47,7 +47,7 @@ public class RegistrationForm extends TestBase {
             $("#submit").click();
         });
 
-        step("Проверяем итог", () -> {
+        step("Checking the total", () -> {
             $(".modal-content").shouldHave(text("Thanks for submitting the form"),
                     text("alexLar@gmail.com"),
                     text("alexLar@gmail.com"), text("Male"), text("3748596032"), text("Lenina 5"),
