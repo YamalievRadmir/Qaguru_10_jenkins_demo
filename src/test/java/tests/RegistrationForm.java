@@ -15,13 +15,11 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 
-public class RegistrationForm {
+public class RegistrationForm extends TestBase {
     @Test
     @DisplayName("Заполнение формы demoqa")
     void successfulTest() {
         step("Заходим на сайт demoqa", () -> {
-            Configuration.baseUrl = "https://demoqa.com";
-            Configuration.browserSize = "1920x1080";
             open("/automation-practice-form");
         });
 
