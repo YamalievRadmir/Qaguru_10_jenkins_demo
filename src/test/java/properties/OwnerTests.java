@@ -10,11 +10,12 @@ public class OwnerTests {
 
     @Test
     @Tag("owner")
-    void someTest1() {
+    void credentialTest() {
         String login = config.login();
         String password = config.password();
-
-        System.out.println("Login: " + login);
-        System.out.println("Password: " + password);
+        String baseUrl = config.baseUrl();
+        System.out.println("Login: "+login);
+        System.out.println("Password: "+password);
+        System.out.println("baseUrl: "+baseUrl);
     }
 }
