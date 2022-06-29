@@ -42,8 +42,8 @@ tasks.withType(Test) {
     }
 }
 
-task formtest(type: Test) {
+task owner_test(type: Test) {
     useJUnitPlatform{
-        includeTags "form"
+        includeTags "owner_test"
     }
 }
