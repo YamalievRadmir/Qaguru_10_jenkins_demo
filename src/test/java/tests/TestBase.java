@@ -11,15 +11,13 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class TestBase extends Attach {
+public class TestBase {
     static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
     @BeforeAll
     static void setUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
@@ -40,9 +38,3 @@ public class TestBase extends Attach {
         Attach.addVideo();
     }
 }
-/*99.0
-        chrome: 100.0
-        opera: 84.0
-        opera: 85.0
-        safari: 97.0
-        safari: 97.0*/

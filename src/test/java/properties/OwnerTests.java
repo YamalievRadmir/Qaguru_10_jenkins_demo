@@ -9,7 +9,6 @@ public class OwnerTests {
     CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
 
     @Test
-    @Tag("owner_test")
     void credentialTest() {
         String login = config.login();
         String password = config.password();
